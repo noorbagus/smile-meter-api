@@ -8,6 +8,14 @@ const nextConfig = {
         sizeLimit: '10mb',
       },
     },
+    // Ignore optional dependencies that cause build issues
+    webpack: (config) => {
+      config.externals.push({
+        'utf-8-validate': 'commonjs utf-8-validate',
+        'bufferutil': 'commonjs bufferutil',
+      });
+      return config;
+    },
     // Jika ingin mengganti direktori output
     // distDir: 'build',
   }
