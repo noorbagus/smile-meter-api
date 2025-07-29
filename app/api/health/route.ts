@@ -1,4 +1,4 @@
-// smile-meter-api/app/api/health/route.ts
+// app/api/health/route.ts
 import { NextResponse } from 'next/server';
 
 export async function GET() {
@@ -6,9 +6,7 @@ export async function GET() {
     success: true,
     data: {
       status: 'ok',
-      timestamp: new Date().toISOString(),
-      service: 'smile-meter-api',
-      environment: process.env.NODE_ENV || 'development'
+      timestamp: new Date().toISOString()
     }
   });
 }
