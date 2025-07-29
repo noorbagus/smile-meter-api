@@ -5,12 +5,9 @@ import { supabase } from '@/lib/supabase';
 import { APIResponse, RewardCategory } from '@/lib/types';
 import { z } from 'zod';
 
-// Export config for file uploads
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// New segment config format for App Router
+export const maxDuration = 30;
+export const dynamic = 'force-dynamic';
 
 // Validasi input
 const uploadSchema = z.object({
